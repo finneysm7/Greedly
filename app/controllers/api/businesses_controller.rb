@@ -1,5 +1,4 @@
 class Api::BusinessesController < ApplicationController
-  
   def create
     @business = Business.new(business_params)
     if @business.save
@@ -16,8 +15,8 @@ class Api::BusinessesController < ApplicationController
   end
   
   def show
-    @business = Business.find(params[:id])
-    render :show
+    #@business = Business.includes(:articles).find(params[:id])
+    render json: Business.find(params[:id]), include: :latest_articles
   end
   
   def index
