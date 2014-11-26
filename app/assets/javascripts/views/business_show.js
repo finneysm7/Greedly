@@ -17,7 +17,6 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 	},
 	
 	addArticle: function (article) {
-		debugger
 		var view = new Greedly.Views.ArticleShow({
 			model: article
 		});

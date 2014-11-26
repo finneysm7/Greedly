@@ -20,6 +20,7 @@ class Api::BusinessesController < ApplicationController
   end
   
   def index
+    render json: Business.all
   end
 
   private 

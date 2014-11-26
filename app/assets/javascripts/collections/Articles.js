@@ -1,10 +1,6 @@
 Greedly.Collections.Articles = Backbone.Collection.extend({
-	url: '/api/businesses',
+	url: '/api/articles',
 	model: Greedly.Models.Article,
-	
-	initialize: function(models, options){
-		this.business = options.business;
-	},
 	
 	comparator: function(article){
 		return article.get('published_at');

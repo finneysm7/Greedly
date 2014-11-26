@@ -7,7 +7,8 @@ class Article < ActiveRecord::Base
       link: entryData.link,
       published_at: entryData.pubDate,
       title: entryData.title,
-      json: entryData.to_json,
+      # had to change from to_json to to_s etc when I ran into an encoding error
+      json: entryData.to_s.encode('UTF-8', {:invalid => :replace, :undef => :replace, :replace => '?'}),
       business_id: business.id
     })
   end

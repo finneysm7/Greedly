@@ -6,10 +6,16 @@ window.Greedly = {
   initialize: function () {
 		Greedly.businesses = new Greedly.Collections.Businesses();
 		new Greedly.Routers.Router({
-			$rootEl: $('#main')
+			$rootEl: $('#main'),
 		});
+		Greedly.businesses.fetch();
+		Greedly.articles = new Greedly.Collections.Articles();
+		Greedly.articles.fetch();
+		var busIndex = new Greedly.Views.BusinessIndex({
+			collection: Greedly.businesses
+		});
+		$('#sidebar').html(busIndex.render().$el)
 		Backbone.history.start();
-		
   },
 }
 
@@ -25,7 +31,7 @@ Backbone.CompositeView = Backbone.View.extend({
 		subview.delegateEvents();
 		
 		if (subview.attachSubviews) {
-			subviewattachSubviews();
+			subview.attachSubviews();
 		}
 	},
 	

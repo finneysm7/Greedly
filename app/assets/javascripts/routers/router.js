@@ -1,7 +1,8 @@
 Greedly.Routers.Router = Backbone.Router.extend({
 	
 	initialize: function (options) {
-		this.$rootEl = options.$rootEl
+		this.$rootEl = options.$rootEl,
+		this.$sidebar = options.$sidebar
 	},
 	
 	routes: {
@@ -10,7 +11,12 @@ Greedly.Routers.Router = Backbone.Router.extend({
 	},
 	
 	index: function () {
-		Greedly.businesses.fetch();
+		// call article index here
+		Greedly.articles.fetch()
+		var artIndex = new Greedly.Views.ArticleIndex({
+			collection: Greedly.articles
+		});
+		this._swapView(artIndex, this.$rootEl);
 	},
 	
 	show: function (id) {
@@ -18,14 +24,14 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		var busShow = new Greedly.Views.BusinessShow({
 			model: model
 		});
-		this._swapView(busShow);
+		this._swapView(busShow, this.$rootEl);
 	},
 	
-	_swapView: function (view) {
+	_swapView: function (view, $htmlEl) {
 		if (this._currentView) {
 			this._currentView.remove();
 		}
 		this._currentView = view;
-		this.$rootEl.html(this._currentView.render().$el); 
+		$htmlEl.html(this._currentView.render().$el); 
 	},
 })
