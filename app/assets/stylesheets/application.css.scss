@@ -18,15 +18,23 @@ body {
 	margin: 0px;
 }
 
+#backdrop{
+	
+}
+
 #content {
-	padding: 50px;
-	position: absolute;
-	left: 200px;
+	display: block;
 }
 
 #sidebar {
-	position: absolute;
+	float:left;
+	display:block;
+	padding-right: 50px;
 	width: 300px;
 	left: 0;
 	height: 100%;
 }
+
+.clearfix:after{
+	
+};

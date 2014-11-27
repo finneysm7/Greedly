@@ -2,12 +2,14 @@ Greedly.Routers.Router = Backbone.Router.extend({
 	
 	initialize: function (options) {
 		this.$rootEl = options.$rootEl,
-		this.$sidebar = options.$sidebar
+		this.$sidebar = options.$sidebar,
+		this.$backdrop = options.$backdrop
 	},
 	
 	routes: {
 		'': 'index',
-		'businesses/:id': 'show'
+		'businesses/:id': 'show',
+		'discover': 'categoryIndex'
 	},
 	
 	index: function () {
@@ -18,6 +20,14 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		});
 		this._swapView(artIndex, this.$rootEl);
 	},
+	
+	categoryIndex: function () {
+		Greedly.categories.fetch()
+		var catIndex = new Greedly.Views.CategoryIndex({
+			collection: Greedly.categories
+		})
+		this._swapView(catIndex, this.$rootEl)
+	}
 	
 	show: function (id) {
 		var model = Greedly.businesses.getOrFetch(id);

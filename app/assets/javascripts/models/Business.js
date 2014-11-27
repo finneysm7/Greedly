@@ -3,7 +3,7 @@ Greedly.Models.Business = Backbone.Model.extend({
 	
 	articles: function () {
 		if(!this._articles) {
-			this._articles = new Greedly.Collections.Articles([], { business: this});
+			this._articles = new Greedly.Collections.Articles();
 		}
 		return this._articles;
 	},
