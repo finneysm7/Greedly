@@ -21,14 +21,6 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		this._swapView(artIndex, this.$rootEl);
 	},
 	
-	categoryIndex: function () {
-		Greedly.categories.fetch()
-		var catIndex = new Greedly.Views.CategoryIndex({
-			collection: Greedly.categories
-		})
-		this._swapView(catIndex, this.$rootEl)
-	}
-	
 	show: function (id) {
 		var model = Greedly.businesses.getOrFetch(id);
 		var busShow = new Greedly.Views.BusinessShow({
