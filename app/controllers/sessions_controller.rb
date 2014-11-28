@@ -7,15 +7,11 @@ class SessionsController < ApplicationController
     def create
       @user = User.find_by_credentials(user_params)
       unless @user.nil?
-        if @user.save
-          log_user_in!(@user)
-          redirect_to posts_url
-        else
-          flash.now[:errors] = @user.errors.full_messages
-          render :new
-        end
+        log_user_in!(@user)
+        redirect_to root_url
       else
-        render :new
+        flash[:errors] = ["Invalid Email/Password"]
+        redirect_to new_session_url
       end
     end
   

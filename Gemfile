@@ -27,6 +27,8 @@ gem 'pg'
 gem 'simple-rss'
 gem 'bootstrap-sass'
 
+gem 'bcrypt-ruby', require: 'bcrypt'
+
 gem 'backbone-on-rails'
 
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
