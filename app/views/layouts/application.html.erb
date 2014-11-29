@@ -8,8 +8,16 @@
 </head>
 <body>
 	<% if logged_in? %>
-	  <%= current_user.email %>
-	  <%= button_to "Sign Out", session_url, :method => :delete %>
+	<nav class="navbar navbar-default" role='navigation'>
+		<div class='container'>
+			<div class='navbar-header'>
+				<span class='navbar-brand'>Hello <%= current_user.email %></span>
+			</div>
+			<div class='collapse navbar-collapse'>
+				<span class='navbar navbar-right'><%= button_to "Sign Out", session_url, :method => :delete %></span>
+			</div>
+		</div>
+	</nav>
 	<% end %>
 <%= yield %>
 

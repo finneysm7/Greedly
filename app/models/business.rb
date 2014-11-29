@@ -1,7 +1,7 @@
 require 'open-uri'
 
 class Business < ActiveRecord::Base
-  validates :title, :rss_feed_url, :category_id, presence: true
+  validates :title, :rss_feed_url, presence: true
   belongs_to :category
   has_many :articles, dependent: :destroy
   has_many :subscriptions, dependent: :destroy

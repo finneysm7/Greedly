@@ -22,8 +22,17 @@ body {
 	margin: 0px;
 }
 
+.navbar {
+	min-height: 0px;
+	margin-bottom: 0px;
+}
+
 #backdrop{
 	
+}
+
+ul {
+	list-style: none;
 }
 
 #content {
@@ -39,10 +48,22 @@ body {
 	height: 100%;
 }
 
+#businesses-wrapper {
+	padding: 30px;
+}
+
 .clearfix:after{
 	
 };
 
 div.welcome-container{
 	margin-top: 50px;
+}
+
+.navbar-right {
+	margin-top: 15px;
+}
+
+.navbar-collapse.collapse {
+	height: 45px;
 }
