@@ -1,6 +1,8 @@
+
+require 'open-uri'
 class Article < ActiveRecord::Base
   belongs_to :business
-  
+
   def self.create_from_json!(entryData, business)
     Article.create!({
       guid: entryData.guid,

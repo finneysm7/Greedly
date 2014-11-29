@@ -4,7 +4,6 @@ window.Greedly = {
   Views: {},
   Routers: {},
   initialize: function () {
-	Greedly.categories = new Greedly.Collections.Categories();
 	Greedly.businesses = new Greedly.Collections.Businesses();
 	new Greedly.Routers.Router({
 		$rootEl: $('#main'),
