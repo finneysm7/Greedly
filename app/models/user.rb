@@ -3,6 +3,8 @@ class User < ActiveRecord::Base
   attr_reader :password
   validates :password, length: {minimum: 6, allow_nil: true}
   validates :session_token, :email, presence: true
+  has_many :subscriptions
+  has_many :businesses, through: :subscriptions, source: :business
   
   def ensure_session_token
     self.session_token ||= SecureRandom.urlsafe_base64(16)

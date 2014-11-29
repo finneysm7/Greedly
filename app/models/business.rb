@@ -4,6 +4,8 @@ class Business < ActiveRecord::Base
   validates :title, :rss_feed_url, :category_id, presence: true
   belongs_to :category
   has_many :articles, dependent: :destroy
+  has_many :subscriptions, dependent: :destroy
+  has_many :users, through: :subscriptions, source: :user
   
   def latest_articles
     reload if updated_at < 30.seconds.ago
