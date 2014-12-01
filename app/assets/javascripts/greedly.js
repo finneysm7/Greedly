@@ -9,12 +9,14 @@ window.Greedly = {
 		$rootEl: $('#main'),
 	});
 	Greedly.businesses.fetch();
-	Greedly.articles = new Greedly.Collections.Articles();
-	Greedly.articles.fetch();
-	var busIndex = new Greedly.Views.BusinessIndex({
-		collection: Greedly.businesses
+	// Greedly.articles = new Greedly.Collections.Articles();
+	// Greedly.articles.fetch();
+	Greedly.subscriptions = new Greedly.Collections.Subscriptions();
+	Greedly.subscriptions.fetch();
+	var subIndex = new Greedly.Views.SubIndex({
+		collection: Greedly.subscriptions
 	});
-	$('#sidebar').html(busIndex.render().$el)
+	$('#sidebar').html(subIndex.render().$el)
 	Backbone.history.start();
   },
 }

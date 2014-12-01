@@ -14,8 +14,14 @@
  *= require_self
  */
 
+
+
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+* {
+	border: thin solid blue;
+}
 
 body {
 	padding: 0px;
@@ -40,21 +46,23 @@ ul {
 }
 
 #sidebar {
+//	position: fixed;
 	float:left;
-	display:block;
+//	display:block;
 	padding-right: 50px;
 	width: 300px;
-	left: 0;
-	height: 100%;
+//	left: 0;
+//	height: 100%;
+}
+
+#main {
+	float: left;
+	width: 500px;
 }
 
 #businesses-wrapper {
 	padding: 30px;
 }
-
-.clearfix:after{
-	
-};
 
 div.welcome-container{
 	margin-top: 50px;

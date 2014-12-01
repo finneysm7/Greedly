@@ -14,11 +14,18 @@ Greedly.Routers.Router = Backbone.Router.extend({
 	
 	index: function () {
 		// call article index here
-		Greedly.articles.fetch()
-		var artIndex = new Greedly.Views.ArticleIndex({
-			collection: Greedly.articles
-		});
-		this._swapView(artIndex, this.$rootEl);
+		// Greedly.articles.fetch()
+// 		var artIndex = new Greedly.Views.ArticleIndex({
+// 			collection: Greedly.articles
+// 		});
+// 		this._swapView(artIndex, this.$rootEl);
+		
+		Greedly.businesses.fetch();
+		var busIndex = new Greedly.Views.BusinessIndex({
+			collection: Greedly.businesses,
+			subcol: Greedly.subscriptions
+		})
+		this._swapView(busIndex, this.$rootEl)
 	},
 	
 	show: function (id) {

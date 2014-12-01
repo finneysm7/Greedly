@@ -34,4 +34,8 @@ class User < ActiveRecord::Base
       nil
     end
   end
+  
+  def subscribed_to?(business)
+    subscriptions.exists?(business_id: business.id)
+  end
 end

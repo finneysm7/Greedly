@@ -30,5 +30,9 @@ class Business < ActiveRecord::Base
     rescue SimpleRSSError
       return false
     end
+  end
+  
+  def has_subscription?(user)
+    subscriptions.exists?(user_id: user.id)
   end 
 end
