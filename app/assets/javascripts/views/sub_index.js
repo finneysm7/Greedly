@@ -2,7 +2,9 @@ Greedly.Views.SubIndex = Backbone.CompositeView.extend({
 	template: JST['sub_index'],
 	
 	initialize: function () {
-		this.listenTo(this.collection, 'sync', this.addAllBusinesses);
+		this.addAllBusinesses();
+		this.listenTo(this.collection, 'add', this.addBusiness);
+		this.listenTo(this.collection, 'remove', this.removeBusiness);
 	},
 	
 	addAllBusinesses: function () {
@@ -13,18 +15,32 @@ Greedly.Views.SubIndex = Backbone.CompositeView.extend({
 	},
 	
 	render: function () {
-		var that = this
-		this.$el.html(that.template());
+		this.$el.html(this.template());
 		this.attachSubviews();
 		return this;
 	},
 	
-	addBusiness: function (business) {
+	addBusiness: function (sub) {
+		var that = this;
+		var business = Greedly.businesses.getOrFetch(sub.get('business_id'))
 		var view = new Greedly.Views.BusinessListItem({
 			model: business,
-			subcol: this.subcol
+			subcol: that.collection
 		});
 		this.addSubview('#sub-businesses-wrapper', view);
+	},
+	
+	removeBusiness: function (sub) {
+		var view = this;
+		var business = Greedly.businesses.getOrFetch(sub.get('business_id'));
+		
+		_(this.subviews()).each(function (subviews, selector){
+			_(subviews).each(function (subview){
+				if (subview.model === business) {
+					view.removeSubview(selector, subview);
+				}
+			});
+		});
 	},
 	
 	renderBusinessListItems: function () {

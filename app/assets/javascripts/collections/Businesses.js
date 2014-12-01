@@ -4,6 +4,7 @@ Greedly.Collections.Businesses = Backbone.Collection.extend({
 	
 	getOrFetch: function (id) {
 		var model = this.get(id);
+		
 		if (model) {
 			model.fetch();
 		} else {

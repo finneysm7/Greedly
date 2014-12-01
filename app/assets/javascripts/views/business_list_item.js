@@ -2,9 +2,12 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 	tagname: 'li',
 	template: JST['bus_list_show'],
 	
-	initialize: function () {
-		this.listenTo(this.subcol, 'sync', this.setUpSubscribeToggle);
-		this.listenTo(this.model, 'sync', this.render);
+	initialize: function (options) {
+		this.subcol = options.subcol
+		this.listenTo(this.model, 'sync', this.setUpSubscribeToggle);
+		this.listenTo(this.subcol, 'sync add', this.setUpSubscribeToggle);
+		this.listenTo(this.subcol, 'remove reset', this.render);
+		this.setUpSubscribeToggle();
 	},
 	
 	events: {
@@ -13,19 +16,22 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 
 	render: function () {
 		var disability = false;
-		var biz_val = "Subscribe";
-		if (this.subscribeState == "subscribed") {
+		var biz_val = "";
+		if (this.model.subscribeState() == "subscribed") {
 		    disability = false;
 		    biz_val = "Unsubscribe";
-		  } else if (this.subscribeState == "unsubscribed") {
+		  } else if (this.model.subscribeState() == "unsubscribed") {
   		    disability = false;
   		    biz_val = "Subscribe";
-		  } else if (this.subscribeState == "subscribing") {
+		  } else if (this.model.subscribeState() == "subscribing") {
 		    disability = true;
 		    biz_val = "Subscribing...";
-		  } else if (this.subscribeState == "unsubscribing") {
+			this.model.toggleSubscribeState();
+		  } else if (this.model.subscribeState() == "unsubscribing") {
   		    disability = true;
   		    biz_val = "Unsubscribing...";
+			debugger;
+			this.model.toggleSubscribeState();
 		  }
 		var renderedContent = this.template({
 			business: this.model,
@@ -39,10 +45,8 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 	setUpSubscribeToggle: function () {
 		this.businessId = this.model.id;
 		this.subcol.each(function (sub) {
-			if (this.model.get(sub.get('business_id'))){
-				this.subscribeState = 'subscribed'
-			} else {
-				this.subscribeState = 'unsubscribed'
+			if (this.model.id === sub.get('business_id')){
+				this.model._subscribeState = 'subscribed'	
 			};
 		}.bind(this));
 		this.render();
@@ -52,15 +56,36 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 		event.preventDefault();
 		var button = event.currentTarget;
 		
-		if (this.subscribeState === 'subscribed') {
-			this.subscribeState = 'subscribing';
+		if (this.model.subscribeState() === 'subscribed') {
+			this.model.toggleSubscribeState();
 			this.render();
 			
+			var that = this;
+			var subscription = this.subcol.findWhere({
+				business_id: this.model.id
+			});
+			subscription.destroy({
+				success: function() {
+					that.subscribeState = 'unsubscribed';
+					that.subcol.remove(subscription);
+					that.render();
+				}
+			});
 			
-			
-		} else if (this.subscribeState === 'unsubscribed'){
-			this.subscribeState = 'unsubscribing';
+		} else if (this.model.subscribeState() === 'unsubscribed'){
+			this.model.toggleSubscribeState();
 			this.render();
+			
+			var that = this;
+			var subscription = new Greedly.Models.Subscription({
+				'business_id': that.model.id
+			});
+			this.subcol.create(subscription, {
+				success: function() {
+					that.subscribeState = 'subscribed';
+					that.render();
+				}
+			});
 		}
 	}
 })

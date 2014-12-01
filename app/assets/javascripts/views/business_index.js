@@ -21,7 +21,7 @@ Greedly.Views.BusinessIndex = Backbone.CompositeView.extend({
 	addBusiness: function (business) {
 		var view = new Greedly.Views.BusinessListItem({
 			model: business,
-			subcol: this.subcol
+			subcol: Greedly.subscriptions
 		});
 		this.addSubview('#businesses-wrapper', view);
 	},
