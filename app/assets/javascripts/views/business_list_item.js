@@ -30,7 +30,6 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 		  } else if (this.model.subscribeState() == "unsubscribing") {
   		    disability = true;
   		    biz_val = "Unsubscribing...";
-			debugger;
 			this.model.toggleSubscribeState();
 		  }
 		var renderedContent = this.template({

@@ -27,7 +27,7 @@ gem 'pg'
 gem 'simple-rss'
 gem 'bootstrap-sass'
 
-gem 'bcrypt-ruby', require: 'bcrypt'
+gem 'bcrypt'
 
 gem 'backbone-on-rails'
 

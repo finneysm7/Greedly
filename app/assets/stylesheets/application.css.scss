@@ -19,9 +19,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-* {
-	border: thin solid blue;
-}
+//* {
+//	border: thin solid blue;
+//}
 
 body {
 	padding: 0px;
@@ -37,9 +37,23 @@ body {
 	
 }
 
+.main-header {
+	text-align: center;
+}
+
+.header-footer {
+	text-align: center;
+	margin: 0px auto 0px auto;
+}
+
+.form-group {
+	text-align:center;
+}
+
 ul {
 	list-style: none;
 }
+
 
 #content {
 	display: block;
@@ -74,4 +88,82 @@ div.welcome-container{
 
 .navbar-collapse.collapse {
 	height: 45px;
+}
+
+.panel {
+	color: white;
+	background-color: rgba(0, 0, 0, 0.3);
+	border: none;
+}
+
+//body {
+//background-size:2em 2em;background-position:0em 1em,1em 0,0em 1em,1em 0,0 0,0 0,0 0,0 0,0 0;background-image:linear-gradient(45deg,#000 8%,transparent 8%,transparent 92%,#000 92%),linear-gradient(-45deg,#000 8%,transparent 8%,transparent 92%,#000 92%),linear-gradient(-45deg,#000 8%,transparent 8%,transparent 92%,#000 92%),linear-gradient(45deg,#000 8%,transparent 8%,transparent 92%,#000 92%),linear-gradient(-45deg,transparent 17%,#000 17%,#000 21%,transparent 21%,transparent 79%,#000 79%,#000 83%,transparent 83%),linear-gradient(45deg,transparent 29%,#000 29%,#000 33%,transparent 33%,transparent 67%,#000 67%,#000 71%,transparent 71%),linear-gradient(-135deg,#202020 10%,#090909 33%,transparent 33%,transparent 67%,#161616 67%,#202020 90%),linear-gradient(135deg,transparent 21%,#161616 21%,#2d2d2d 32.6%,#161616 64.5%,#202020 70.3%,#090909 79%,transparent 79%),linear-gradient(-135deg,transparent 21%,#161616 21%,#202020 40%,#202020 60%,#090909 79%,transparent 79%);
+//color: white;
+//font-weight: 700;
+//font-size: 29px;
+//margin: 4em auto;
+//text-align: center;
+//cursor: crosshair;
+//letter-spacing: 5;
+//}
+
+/*This is coded CSS rainbow*/
+
+a:hover {
+-webkit-animation:rainbow 1s infinite;
+-ms-animation:rainbow 1s infinite;
+-o-animation:rainbow 1s infinite;
+animation:rainbow 1s infinite;
+}
+@-webkit-keyframes rainbow {
+0% {color: #ff0000;}
+10% {color: #ff8000;}
+20% {color: #ffff00;}
+30% {color: #80ff00;}
+40% {color: #00ff00;}
+50% {color: #00ff80;}
+60% {color: #00ffff;}
+70% {color: #0080ff;}
+80% {color: #0000ff;}
+90% {color: #8000ff;}
+100% {color: #ff0080;}
+}
+@-ms-keyframes rainbow {
+0% {color: #ff0000;}
+10% {color: #ff8000;}
+20% {color: #ffff00;}
+30% {color: #80ff00;}
+40% {color: #00ff00;}
+50% {color: #00ff80;}
+60% {color: #00ffff;}
+70% {color: #0080ff;}
+80% {color: #0000ff;}
+90% {color: #8000ff;}
+100% {color: #ff0080;}
+}
+@-o-keyframes rainbow {
+0% {color: #ff0000;}
+10% {color: #ff8000;}
+20% {color: #ffff00;}
+30% {color: #80ff00;}
+40% {color: #00ff00;}
+50% {color: #00ff80;}
+60% {color: #00ffff;}
+70% {color: #0080ff;}
+80% {color: #0000ff;}
+90% {color: #8000ff;}
+100% {color: #ff0080;}
+}
+@keyframes rainbow {
+0% {color: #ff0000;}
+10% {color: #ff8000;}
+20% {color: #ffff00;}
+30% {color: #80ff00;}
+40% {color: #00ff00;}
+50% {color: #00ff80;}
+60% {color: #00ffff;}
+70% {color: #0080ff;}
+80% {color: #0000ff;}
+90% {color: #8000ff;}
+100% {color: #ff0080;}
 }
