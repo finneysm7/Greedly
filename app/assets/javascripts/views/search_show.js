@@ -1,5 +1,5 @@
-Greedly.Views.BusinessIndex = Backbone.CompositeView.extend({
-	template: JST['bus_index'],
+Greedly.Views.SearchShow = Backbone.CompositeView.extend({
+	template: JST['search_show'],
 	
 	initialize: function () {
 		// this.listenTo(this.collection, 'sync', this.render);
@@ -23,7 +23,7 @@ Greedly.Views.BusinessIndex = Backbone.CompositeView.extend({
 			model: business,
 			subcol: Greedly.subscriptions
 		});
-		this.addSubview('#businesses-wrapper', view);
+		this.addSubview('#search-result', view);
 	},
 
 	renderBusinessListItems: function () {

@@ -8,13 +8,24 @@
 </head>
 <body>
 	<% if logged_in? %>
-	<nav class="navbar navbar-default" role='navigation'>
+	<nav class="navbar navbar-default clearfix" role='navigation'>
 		<div class='container'>
 			<div class='navbar-header'>
 				<span class='navbar-brand'>Hello <%= current_user.email %></span>
 			</div>
 			<div class='collapse navbar-collapse'>
-				<span class='navbar navbar-right'><%= button_to "Sign Out", session_url, :method => :delete %></span>
+				<span class='navbar navbar-middle'>
+					<form id="search-form">
+					        <input id='bus-search' name="business" placeholder='Search for business feeds'>
+					        <input class='btn btn-primary' value="Search" type="submit" />
+					    </form>
+					
+				</span>
+				<span class='navbar navbar-right'>
+				<form method="post" action="/images/delete/1" class="button_to">
+				        <input type="hidden" name="_method" value="delete" />
+				        <input class='btn btn-primary' value="Sign Out" type="submit" />
+				    </form></span>
 			</div>
 		</div>
 	</nav>

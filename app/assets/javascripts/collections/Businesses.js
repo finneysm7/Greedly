@@ -17,5 +17,31 @@ Greedly.Collections.Businesses = Backbone.Collection.extend({
 			});
 		}
 		return model;
-	}
+	},
+	
+	search: function (query) {
+		result_collection = new Greedly.Collections.Businesses();
+		var results = this.filter(function (model) {
+			// if model's title matches search query, return true
+			// else false
+			var matchedExp = new RegExp(query, 'i');
+			var thing = model.get('title').match(matchedExp);
+			if (thing) {
+				return true;
+			} else {
+				return false;
+			}
+		});
+		
+		// this.each(function (business) {
+// 			if (business.get('title') == query) {
+// 				result_collection.add(business)
+// 			}
+// 		});
+        
+        // set result_collection's models to the results array
+		// return result_collection
+		result_collection.set(results);
+		return result_collection
+	}   
 })

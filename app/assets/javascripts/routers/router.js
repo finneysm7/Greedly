@@ -4,12 +4,27 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		this.$rootEl = options.$rootEl,
 		this.$sidebar = options.$sidebar,
 		this.$backdrop = options.$backdrop
+		//need to add event listener here for searching fucntionality
+		this.$rootEl.on('submit', 'funTimes')
+		//DecodeURIComponent
 	},
 	
 	routes: {
 		'': 'index',
 		'businesses/:id': 'show',
-		'discover': 'categoryIndex'
+		'search/?business%3D:term': 'search'
+	},
+	
+	search: function(query){
+		//alert('you searched for ' + query);
+		//filter the passed collection by title
+		var queryCorrect = decodeURIComponent(query);
+		debugger
+		var pass_col = Greedly.businesses.search(queryCorrect)
+		var searchShow = new Greedly.Views.SearchShow({
+			collection: pass_col
+		});
+		this._swapView(searchShow, this.$rootEl);
 	},
 	
 	index: function () {
@@ -24,8 +39,8 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		var busIndex = new Greedly.Views.BusinessIndex({
 			collection: Greedly.businesses,
 			subcol: Greedly.subscriptions
-		})
-		this._swapView(busIndex, this.$rootEl)
+		});
+		this._swapView(busIndex, this.$rootEl);
 	},
 	
 	show: function (id) {
