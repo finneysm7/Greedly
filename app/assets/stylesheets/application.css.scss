@@ -90,10 +90,16 @@ div.welcome-container{
 	height: 45px;
 }
 
-.panel {
+.welcome-container {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.3);
 	border: none;
+	input {
+		color: black;
+	}
+	.btn {
+		color: white;
+	}
 }
 
 //body {
