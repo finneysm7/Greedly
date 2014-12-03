@@ -3,7 +3,7 @@ Greedly.Collections.Articles = Backbone.Collection.extend({
 	model: Greedly.Models.Article,
 	
 	comparator: function(article){
-		return article.get('published_at');
+		return -article.get('published_at');
 	},
 	
 	getOrFetch: function (id) {

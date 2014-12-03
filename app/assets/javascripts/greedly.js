@@ -22,7 +22,7 @@ window.Greedly = {
 		$rootEl: $('#main'),
 	});
 	Greedly.businesses.fetch();
-	// Greedly.articles = new Greedly.Collections.Articles();
+	Greedly.articles = new Greedly.Collections.Articles();
 	// Greedly.articles.fetch();
 	Greedly.subscriptions = new Greedly.Collections.Subscriptions();
 	Greedly.subscriptions.fetch();

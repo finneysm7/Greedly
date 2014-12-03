@@ -22,10 +22,13 @@
 					
 				</span>
 				<span class='navbar navbar-right'>
-				<form method="post" action="/images/delete/1" class="button_to">
-				        <input type="hidden" name="_method" value="delete" />
-				        <input class='btn btn-primary' value="Sign Out" type="submit" />
-				    </form></span>
+				<form method="post" action="<%= session_url%>" class="button_to">
+					<input type='hidden'
+					name='authenticity_token'
+					value='<%= form_authenticity_token %>'>
+			        <input type="hidden" name="_method" value="delete" />
+			        <input class='btn btn-primary' value="Sign Out" type="submit" />
+			    </form></span>
 			</div>
 		</div>
 	</nav>

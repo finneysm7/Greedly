@@ -8,7 +8,7 @@ class Business < ActiveRecord::Base
   has_many :users, through: :subscriptions, source: :user
   
   def latest_articles
-    reload if updated_at < 30.seconds.ago
+    # reload if updated_at < 30.seconds.ago
     articles
   end
   

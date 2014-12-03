@@ -11,20 +11,34 @@ Greedly.Routers.Router = Backbone.Router.extend({
 	
 	routes: {
 		'': 'index',
+		'articles': 'articlesIndex',
 		'businesses/:id': 'show',
 		'search/?business%3D:term': 'search'
+	},
+	
+	articlesIndex: function () {
+		Greedly.articles.fetch();
+		var artIndex = new Greedly.Views.ArticleIndex({
+			collection: Greedly.articles
+		});
+		this._swapView(artIndex, this.$rootEl);
 	},
 	
 	search: function(query){
 		//alert('you searched for ' + query);
 		//filter the passed collection by title
 		var queryCorrect = decodeURIComponent(query);
-		debugger
-		var pass_col = Greedly.businesses.search(queryCorrect)
-		var searchShow = new Greedly.Views.SearchShow({
-			collection: pass_col
+		var that = this;
+		Greedly.businesses.fetch({
+			success: function () {
+				var pass_col = Greedly.businesses.search(queryCorrect)
+				var searchShow = new Greedly.Views.SearchShow({
+					collection: pass_col
+				});
+				that._swapView(searchShow, that.$rootEl);
+			}
 		});
-		this._swapView(searchShow, this.$rootEl);
+		
 	},
 	
 	index: function () {
@@ -48,7 +62,7 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		var busShow = new Greedly.Views.BusinessShow({
 			model: model
 		});
-		this._swapView(busShow, this.$rootEl);
+		this._slideView(busShow);
 	},
 	
 	_swapView: function (view, $htmlEl) {
@@ -58,4 +72,8 @@ Greedly.Routers.Router = Backbone.Router.extend({
 		this._currentView = view;
 		$htmlEl.html(this._currentView.render().$el); 
 	},
+	
+	_slideView: function (view){
+		this.$rootEl.append(view.render().$el);
+	}
 })
