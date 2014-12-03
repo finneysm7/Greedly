@@ -15,7 +15,7 @@ class Api::BusinessesController < ApplicationController
   end
   
   def show
-    #@business = Business.includes(:articles).find(params[:id])
+    @business = Business.includes(:articles).find(params[:id])
     render json: Business.find(params[:id]), include: :latest_articles
   end
   

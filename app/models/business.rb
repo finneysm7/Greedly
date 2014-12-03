@@ -8,20 +8,22 @@ class Business < ActiveRecord::Base
   has_many :users, through: :subscriptions, source: :user
   
   def latest_articles
-    # reload if updated_at < 30.seconds.ago
-    articles
+    reload if updated_at < 30.seconds.ago
+    articles.sort { |a, b| b.published_at <=> a.published_at }
   end
   
   def reload
-    
     begin
-      feed_data = SimpleRSS.parse(open(rss_feed_url))
+      #not sure if Feedjira will work, I need something that can handle feedburner
+      #Feedjira::Feed.fetch_and_parse(rss_feed_url)
+      feed_data = Feedjira::Feed.fetch_and_parse(rss_feed_url)#SimpleRSS.parse(open(rss_feed_url))
       self.title = feed_data.title
       save!
       
       existing_article_guids = Article.pluck(:guid).sort();
       feed_data.entries.each do |entry_data|
-        unless existing_article_guids.include?(entry_data.guid)
+        #Feedjira entry data has no .guid method
+        unless existing_article_guids.include?(entry_data.entry_id)
           Article.create_from_json!(entry_data, self)
         end
       end
