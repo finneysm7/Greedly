@@ -12,7 +12,6 @@ Greedly.Routers.Router = Backbone.Router.extend({
 	routes: {
 		'': 'index',
 		'articles': 'articlesIndex',
-		'businesses/:id': 'show',
 		'search/?business%3D:term': 'search'
 	},
 	

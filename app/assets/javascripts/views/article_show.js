@@ -1,4 +1,5 @@
 Greedly.Views.ArticleShow = Backbone.View.extend({
+	tagname: 'li',
 	template: JST['art_show'],
 	
 	initialize: function () {

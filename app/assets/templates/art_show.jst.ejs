@@ -1,1 +1,10 @@
-<li><h2><a href='<%= article.get('link')%>'><%= article.get('title') %></a></h2></li>
+<div class='art-overview shadow'>
+<h2 class='clamped clamped-2'>
+	<span class='text'>
+		<a href='<%= article.get('link')%>' target='_blank'><%= article.get('title') %></a>
+		<span class='ellipsis'>&#133</span>
+		<span class='fill'></span>
+	</span>
+</h2>
+<p>Published at: <%= article.get("published_at")%><p>
+</div>

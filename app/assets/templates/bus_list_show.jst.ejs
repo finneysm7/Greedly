@@ -1,5 +1,15 @@
-<div class='biz-overview shadow'><a href='#businesses/<%= business.id %>'><img src="<%= business.get('image_source')%>" width='75' height='50'></img>
-	<%= business.get('title') %></a>
-	<p><%= business.get('description') %></p>
+<div class='biz-overview shadow'>
+	<a href="http://fiddler.io" class='to-biz-show' 
+		data-id='<%= business.id%>'><img src="<%= business.get('image_source')%>" width='75' height='50'></img><%= business.get('title') %></a>
+	<p class='clamped clamped-2'>
+		<span class='text'>
+			<%= business.get('description') %>
+			<span class='ellipsis'>&#133</span>
+			<span class='fill'></span>
+		</span>
+	</p>
 	<button class='subscribe-toggle btn btn-primary'
-		data-business-id='<%= business.id %>'><%= button_val %></button></div>
+	data-business-id='<%= business.id %>'><%= button_val %></button>
+</div>
+		
+		<!-- #businesses/<%= business.id %> -->

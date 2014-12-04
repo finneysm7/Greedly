@@ -11,7 +11,7 @@
 	<nav class="navbar navbar-default clearfix" role='navigation'>
 		<div class='container'>
 			<div class='navbar-header'>
-				<span class='navbar-brand'>Hello <%= current_user.email %></span>
+				<span class='navbar-brand'><%= image_tag 'Greedly-logo.png', style: "height: 100%" %></span>
 			</div>
 			<div class='collapse navbar-collapse'>
 				<span class='navbar navbar-middle'>
@@ -21,7 +21,8 @@
 					    </form>
 					
 				</span>
-				<span class='navbar navbar-right'>
+				<span class='navbar navbar-right clearfix'>
+				<div class='username'>Hello <%= current_user.email %></div>
 				<form method="post" action="<%= session_url%>" class="button_to">
 					<input type='hidden'
 					name='authenticity_token'

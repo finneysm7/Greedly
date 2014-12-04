@@ -11,10 +11,16 @@ Greedly.Views.BusinessIndex = Backbone.CompositeView.extend({
 		});
 	},
 	
+	events: {
+		//listen for click of business show trigger
+		'click .to-biz-show': 'businessShow'
+	},
+	
 	render: function () {
 		var that = this
-		this.$el.html(that.template());
 		this.attachSubviews();
+		this.$el.html(that.template());
+		// this.$('.to-biz-show').on('click', this.businessShow.bind(this));
 		return this;
 	},
 	
@@ -29,4 +35,15 @@ Greedly.Views.BusinessIndex = Backbone.CompositeView.extend({
 	renderBusinessListItems: function () {
 		this.collection.each(this.addBusiness.bind(this));
 	},
+	
+	businessShow: function (event) {
+		debugger;
+		event.preventDefault();
+		var id = $(event.currentTarget).data('id')
+		var model = Greedly.businesses.getOrFetch(id);
+		var busShow = new Greedly.Views.BusinessShow({
+			model: model
+		});
+		this.$('#biz-show').html(busShow.render().$el);
+	}
 })

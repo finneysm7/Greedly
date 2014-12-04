@@ -46,33 +46,58 @@
 	background-color: #FFF;
 }
 
-//.floatingEntryContent {
-//	position: fixed;
-//	top: 0px;
-//	bottom: 0px;
-//	max-width: 100%;
-//	z-index: 505;
-//	transition-property: opacity;
-//	transition-duration: 0.2s;
-//	transition-timing-function: initial;
-//	transition-delay: initial;
-//}
+.art-overview{
+	display: block;
+	width: 700px;
+	height: 150px;
+	border-radius: 3px;
+	padding: 10px;
+	margin-bottom: 30px;
+	padding-bottom: 0px;
+	border: 1px solid #D8D8D8;
+	background-color: #FFF;
+}
+
+#biz-show {
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+	max-width: 100%;
+	z-index: 505;
+	transition-property: opacity;
+	transition-duration: 0.2s;
+	transition-timing-function: initial;
+	transition-delay: initial;
+}
+
+h2 {
+	margin-top: 0px;
+}
+
+.navbar-brand{
+	padding: 0px 0px;
+}
+
+#article-list{
+	margin-top: 30px;
+}
 
 body.home.slided{
 	color: #494949;
 }
 
-.sliderContainer {
-	min-width: 75%;
-	width: 500px;
-}
+//.sliderContainer {
+//	min-width: 75%;
+//	width: 500px;
+//}
 
 .button_to{
-	margin-top: -7px;
+	margin-top: 0px;
+	float: left;
 }
 
 #search-form{
-	margin-top: 7px;
+	margin-top: 15px;
 }
 
 body {
@@ -81,12 +106,20 @@ body {
 }
 
 .navbar {
-	min-height: 0px;
+	min-height: 50px;
 	margin-bottom: 0px;
+	background-color: black;
 }
 
 #backdrop{
-	
+
+}
+
+.username{
+	color: white;
+	float:left;
+	margin-right: 20px;
+	margin-top: 7px;
 }
 
 .main-header {
@@ -122,6 +155,10 @@ ul {
 	float:right;
 }
 
+.navbar-brand {
+	margin-top: 7px;
+}
+
 #content {
 	display: block;
 }
@@ -138,13 +175,38 @@ ul {
 }
 
 .shadow {
-  -moz-box-shadow:    3px 3px 5px 6px #ccc;
-  -webkit-box-shadow: 3px 3px 5px 6px #ccc;
-  box-shadow:         3px 3px 5px 6px #ccc;
+  -moz-box-shadow:    1px 1px 2px 3px #ccc;
+  -webkit-box-shadow: 1px 1px 2px 3px #ccc;
+  box-shadow:         1px 1px 2px 3px #ccc;
 }
 
 .sub-title {
 	padding-left: 30px;
+}
+
+.clamped {
+    line-height: 1.5;
+    overflow: hidden;
+    position: relative;
+}
+
+.clamped-2 {
+    /* Clamp to 2 lines, ie line-height x 2: */
+    max-height: 3em;
+}
+
+.ellipsis {
+    background: #fff;
+    bottom: 0;
+    position: absolute;
+    right: 0;
+}
+
+.fill {
+    background: #fff; 
+    height: 100%;
+    position: absolute;
+    width: 100%;
 }
 
 .link {

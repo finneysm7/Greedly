@@ -6,5 +6,6 @@ Business.create!([
   {title: "xkcd.com", rss_feed_url: "http://xkcd.com/rss.xml", description: "lol", category_id: nil, image_source: "http://imgs.xkcd.com/static/terrible_small_logo.png"},
   {title: "Dinosaur Comics", rss_feed_url: "http://www.qwantz.com/rssfeed.php", description: "Dinosaur Comics!", category_id: nil, image_source: "http://www.dinosaurcentral.com/images/prehysterics/Dinosaur_Comics.jpg"},
   {title: "Explosm.net", rss_feed_url: "http://feeds.feedburner.com/Explosm", description: "Cyanide and Happiness!", category_id: nil, image_source: "http://www.creativeheads.net/media_nx.ashx?id=3677&size=med"},
+  {title: "Lifehacker.com", rss_feed_url: "http://feeds.gawker.com/lifehacker/full", description: "Hack your life", category_id: nil, image_source: "http://upload.wikimedia.org/wikipedia/commons/4/4a/Lifehacker_Logo.png"},
 ])
 
