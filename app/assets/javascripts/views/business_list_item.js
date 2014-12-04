@@ -11,7 +11,9 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 	},
 	
 	events: {
-		'click button': 'subscribeToggle'
+		'click button': 'subscribeToggle',
+		//listen for click of business show trigger
+		'click .to-biz-show': 'businessShow'
 	},
 
 	render: function () {
@@ -32,10 +34,12 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
   		    biz_val = "Unsubscribing...";
 			this.model.toggleSubscribeState();
 		  }
+		 
 		var renderedContent = this.template({
 			business: this.model,
 			disabled: disability,
-			button_val: biz_val
+			button_val: biz_val,
+			//article: this.model.articles().last
 		})
 		this.$el.html(renderedContent);
 		return this;
@@ -86,5 +90,17 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 				}
 			});
 		}
+	},
+	
+	businessShow: function (event) {
+		event.preventDefault();
+		var id = $(event.currentTarget).data('id')
+		var model = Greedly.businesses.getOrFetch(id);
+		var busShow = new Greedly.Views.BusinessShow({
+			model: model
+		});
+		$('#biz-show').html(busShow.render().$el);
+		$('#biz-show').addClass('show');
+		$('.disabling').addClass('is_disabled')
 	}
 })

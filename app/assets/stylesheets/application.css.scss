@@ -59,16 +59,44 @@
 }
 
 #biz-show {
+	position: absolute;
 	right: 0px;
 	top: 0px;
 	bottom: 0px;
 	max-width: 100%;
-	z-index: 505;
-	transition-property: opacity;
-	transition-duration: 0.2s;
-	transition-timing-function: initial;
-	transition-delay: initial;
+	left: 100%;
+	visibility: hidden;
+	opacity: 0;
+	transition-property: left opacity;
+	transition-duration: .5s;
+//	transition-timing-function: initial;
+//	transition-delay: initial;
 }
+
+.disabling {
+	
+}
+
+.is_disabled {
+    opacity: .5;
+	background-color: black;
+    pointer-events: none;
+}
+
+#main{
+	position: relative;
+	background-color: lightblue;
+}
+
+
+#biz-show.show{
+	visibility: visible;
+	opacity: 1;
+	background-color: white;
+	left: 40%;
+	width: 75%;
+}
+
 
 h2 {
 	margin-top: 0px;
@@ -108,7 +136,7 @@ body {
 .navbar {
 	min-height: 50px;
 	margin-bottom: 0px;
-	background-color: black;
+	background-color: darkgrey;
 }
 
 #backdrop{
@@ -129,6 +157,11 @@ body {
 .header-footer {
 	text-align: center;
 	margin: 0px auto 0px auto;
+	margin-bottom: 25px;
+}
+
+.input-icon{
+	
 }
 
 .form-group {
@@ -182,6 +215,7 @@ ul {
 
 .sub-title {
 	padding-left: 30px;
+	margin-top: 20px;
 }
 
 .clamped {

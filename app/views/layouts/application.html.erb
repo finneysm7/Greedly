@@ -8,21 +8,22 @@
 </head>
 <body>
 	<% if logged_in? %>
+	<div class='disabling'>
 	<nav class="navbar navbar-default clearfix" role='navigation'>
 		<div class='container'>
 			<div class='navbar-header'>
-				<span class='navbar-brand'><%= image_tag 'Greedly-logo.png', style: "height: 100%" %></span>
+				<span class='navbar-brand'><a href = ''><%= image_tag 'Greedly-logo.png', style: "height: 100%" %></a></span>
 			</div>
 			<div class='collapse navbar-collapse'>
 				<span class='navbar navbar-middle'>
 					<form id="search-form">
-					        <input id='bus-search' name="business" placeholder='Search for business feeds'>
-					        <input class='btn btn-primary' value="Search" type="submit" />
-					    </form>
-					
+				        <input id='bus-search' name="business" placeholder='Search for business feeds'>
+				        <input class='btn btn-primary' value="Search" type="submit" />
+						
+				    </form>
 				</span>
 				<span class='navbar navbar-right clearfix'>
-				<div class='username'>Hello <%= current_user.email %></div>
+				<div class='username'>Signed in as <%= current_user.email %></div>
 				<form method="post" action="<%= session_url%>" class="button_to">
 					<input type='hidden'
 					name='authenticity_token'
@@ -33,6 +34,7 @@
 			</div>
 		</div>
 	</nav>
+	</div>
 	<% end %>
 <%= yield %>
 
