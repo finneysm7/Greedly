@@ -35,9 +35,10 @@ Greedly.Views.SubIndex = Backbone.CompositeView.extend({
 		var business = Greedly.businesses.getOrFetch(sub.get('business_id'));
 		
 		_(this.subviews()).each(function (subviews, selector){
-			_(subviews).each(function (subview){
+			_(subviews.slice(0)).each(function (subview){
 				if (subview.model === business) {
 					view.removeSubview(selector, subview);
+					return;
 				}
 			});
 		});

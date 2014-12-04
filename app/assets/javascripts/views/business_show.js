@@ -34,6 +34,11 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 	
 	slide: function (event) {
 		event.preventDefault();
+		this.$el.parent().one('transitionend', function(event) {
+			debugger;
+			$(event.currentTarget).css("display", "none");
+			// set style to display: none
+		})
 		this.$el.parent().removeClass('show');
 		$('.disabling').removeClass('is_disabled'); 
 	} 

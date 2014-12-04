@@ -14,8 +14,6 @@
  *= require_self
  */
 
-
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
@@ -65,16 +63,34 @@
 	bottom: 0px;
 	max-width: 100%;
 	left: 100%;
+//	display: none;
 	visibility: hidden;
 	opacity: 0;
+	overflow: scroll;
 	transition-property: left opacity;
 	transition-duration: .5s;
 //	transition-timing-function: initial;
 //	transition-delay: initial;
 }
 
-.disabling {
-	
+html body .backdrop .disabling {
+	height: 100%;
+}
+
+html body .backdrop {
+	height: 100%;
+}
+
+html body {
+	height: 100%;
+}
+
+html{
+	height: 100%;
+}
+
+.sliderContainer {
+	background-color: white;
 }
 
 .is_disabled {
@@ -90,6 +106,7 @@
 
 
 #biz-show.show{
+//	display:block;
 	visibility: visible;
 	opacity: 1;
 	background-color: white;
@@ -104,10 +121,6 @@ h2 {
 
 .navbar-brand{
 	padding: 0px 0px;
-}
-
-#article-list{
-	margin-top: 30px;
 }
 
 body.home.slided{
@@ -196,6 +209,10 @@ ul {
 	display: block;
 }
 
+.feed-list{
+	margin-top: 30px;
+}
+
 #sidebar {
 //	position: fixed;
 	background-color: lightgreen;
@@ -250,6 +267,7 @@ ul {
 #main {
 	float: left;
 	width: 900px;
+	overflow: scroll;
 }
 
 #businesses-wrapper {
