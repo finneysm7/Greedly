@@ -1,17 +1,21 @@
 <div class='floatingEntryContent sliderContainer'>
 	
-		<img src="<%= business.imageUrl()%>" width='150' height='100'></img>
-		<h2><%= business.get('title') %></h2>
-		<a class='back-to-biz' href=''>X</a>
+		<img class='sub-title' src="<%= business.imageUrl()%>" width='150' height='100'></img>
+		<h2 class='sub-title'><%= business.get('title') %></h2>
+		<a class='sub-title back-to-biz' href=''>X</a>
 	
 	
-				<p><%= business.get('description')%></p>
+				<p class 'header-description' style='margin-left: 30px;'><%= business.get('description')%></p>
 				
-				<ul id='article-wrapper'>
+				<ul id='article-wrapper' class='feed-list'>
+					<div class="spinner">
+					  <div class="dot1"></div>
+					  <div class="dot2"></div>
+					</div>
 				</ul>
 		
 	
-		<a class='back-to-biz' href=''>Back to Business Index</a>
+		<a class='sub-title back-to-biz' href=''>Back to Business Index</a>
 	
 </div>
 

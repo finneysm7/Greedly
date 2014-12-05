@@ -23,3 +23,5 @@ Business.create!([
   {title: "GM Media News", rss_feed_url: "http://media.gmc.com/media/us/en/gmc/news/jcr:content/categorynavigation/subcategorynavigation/rss.newsrss.html", description: "A division of the American manufacturer General Motors (GM)", category_id: 1, image_source: "gmc-trucks-logo-emblem.jpg"},
 ])
 
+
+

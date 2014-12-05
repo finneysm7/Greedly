@@ -9,7 +9,22 @@ initSearch = function(){
 	})
 }
 
+initGuestLogin = function(){
+	$('#guest-login').on('click', function(event){
+		var $target = $('#guest-login')
+		event.preventDefault();
+		debugger
+		if ($('#new-user').parent($target)){
+			//redirect to session/new
+		}
+		$('#email-input').val('guest');
+		$('#password-input').val('heyman');
+		$('#submit-btn').trigger('click')
+	})
+}
+
 $(initSearch)
+$(initGuestLogin)
 
 window.Greedly = {
   Models: {},

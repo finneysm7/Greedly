@@ -110,7 +110,7 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 		var busShow = new Greedly.Views.BusinessShow({
 			model: model
 		});
-		$('#biz-show').css('display', 'block');
+		$('#biz-show').css('display', '');
 		$('#biz-show').html(busShow.render().$el);
 		$('#biz-show').addClass('show');
 		$('.disabling').addClass('is_disabled')

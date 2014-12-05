@@ -30,19 +30,20 @@ body {
 		<div class='form-group'>
 			<label>Email</label>
 		</div>
-		<div class='form-group'>
+		<div class='form-group' id='email-input'>
 			<input type="text" name="user[email]" value="">
 		</div>
 		
 		<div class='form-group'>
 			<label for='sess-password'>Password</label>
 		</div>
-		<div class='form-group'>
+		<div class='form-group' id='password-input'>
 			<input id='sess-password' type="password" name="user[password]" value="" >
 		</div>
 	<div class='header-footer'>
-		<input class='btn btn-primary' type="submit" value="Sign In">
+		<input class='btn btn-primary' id='submit-btn' type="submit" value="Sign In">
 		<a class='btn btn-primary' href='/users/new'>New? Sign Up!</a>
+		<!-- <button class='btn btn-primary' id='guest-login'>Guest Login</button> -->
 	</div>
 	</form>
 </div>

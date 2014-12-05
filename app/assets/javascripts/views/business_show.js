@@ -4,7 +4,7 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 	initialize: function () {
 		this.listenTo(this.model, 'sync', this.render);
 		//this.listenTo(this., 'add', this.addArticle);
-		this.listenTo(this.model.articles(), 'add', this.renderArticles);
+		// this.listenTo(this.model.articles(), 'add', this.renderArticles);
 	},
 	
 	events: {
@@ -21,6 +21,7 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 	},
 	
 	addArticle: function (article) {
+		this.$('.spinner').remove();
 		var view = new Greedly.Views.ArticleShow({
 			model: article
 		});
@@ -35,7 +36,6 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 	slide: function (event) {
 		event.preventDefault();
 		this.$el.parent().one('transitionend', function(event) {
-			debugger;
 			$(event.currentTarget).css("display", "none");
 			// set style to display: none
 		})

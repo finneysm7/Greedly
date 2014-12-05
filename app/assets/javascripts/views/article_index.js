@@ -18,6 +18,7 @@ Greedly.Views.ArticleIndex = Backbone.CompositeView.extend({
 	},
 	
 	addArticleItem: function (article) {
+		this.$('.spinner').remove();
 		var view = new Greedly.Views.ArticleShow({
 			model: article
 		});
