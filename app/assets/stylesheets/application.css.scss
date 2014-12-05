@@ -102,8 +102,10 @@ html{
 #main{
 	position: relative;
 	background-color: lightblue;
+	overflow: scroll;
+	float: left;
+	width: 900px;
 }
-
 
 #biz-show.show{
 //	display:block;
@@ -262,12 +264,6 @@ ul {
 
 .link {
 	padding-left: 30px;
-}
-
-#main {
-	float: left;
-	width: 900px;
-	overflow: scroll;
 }
 
 #businesses-wrapper {

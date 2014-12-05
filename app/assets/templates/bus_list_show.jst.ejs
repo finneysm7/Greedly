@@ -1,6 +1,6 @@
 <div class='biz-overview shadow'>
 	<a href="http://fiddler.io" class='to-biz-show' 
-		data-id='<%= business.id%>'><img src="<%= business.get('image_source')%>" width='75' height='50'></img><%= business.get('title') %></a>
+		data-id='<%= business.id%>'><img src="<%= business.imageUrl()%>" width='75' height='50'></img><%= business.get('title') %></a>
 	<p class='clamped clamped-2'>
 		<span class='text'>
 			<%= business.get('description') %>

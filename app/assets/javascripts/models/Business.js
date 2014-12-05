@@ -35,5 +35,9 @@ Greedly.Models.Business = Backbone.Model.extend({
 		}
 		
 		return response;
-	}
+	},
+	
+	imageUrl: function () {
+		return 'assets/' + this.get('image_source')
+	},
 });
