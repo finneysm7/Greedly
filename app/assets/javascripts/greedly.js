@@ -13,12 +13,11 @@ initGuestLogin = function(){
 	$('#guest-login').on('click', function(event){
 		var $target = $('#guest-login')
 		event.preventDefault();
-		debugger
 		if ($('#new-user').parent($target)){
 			//redirect to session/new
 		}
-		$('#email-input').val('guest');
-		$('#password-input').val('heyman');
+		$('#email-input input').val('guest');
+		$('#password-input input').val('heyman');
 		$('#submit-btn').trigger('click')
 	})
 }
