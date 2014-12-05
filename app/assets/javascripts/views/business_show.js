@@ -29,7 +29,6 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 	},
 	
 	renderArticles: function () {
-		
 		this.model.articles().each(this.addArticle.bind(this));
 	},
 	

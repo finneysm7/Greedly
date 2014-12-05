@@ -36,17 +36,17 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 		  }
 		  var that = this;
 		  // this.model.articles().fetch({
- // 			  success: function () {
- // 		  		var renderedContent = that.template({
- // 		  			business: that.model,
- // 		  			disabled: disability,
- // 		  			button_val: biz_val,
- // 		  			article: that.model.articles().slice(-1)[0]
- // 		  		})
- // 		  		that.$el.html(renderedContent);
- // 		  		return that;
- // 			  }
- // 		  });
+//  			  success: function () {
+//  		  		var renderedContent = that.template({
+//  		  			business: that.model,
+//  		  			disabled: disability,
+//  		  			button_val: biz_val,
+//  		  			article: that.model.articles().slice(0)[0]
+//  		  		})
+//  		  		that.$el.html(renderedContent);
+//  		  		return that;
+//  			  }
+//  		  });
  		var renderedContent = that.template({
   		  			business: that.model,
   		  			disabled: disability,
