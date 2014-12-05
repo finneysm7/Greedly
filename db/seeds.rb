@@ -2,11 +2,11 @@
 Business.create!([
   {title: "xkcd.com", rss_feed_url: "http://xkcd.com/rss.xml", description: "lol", category_id: nil, image_source: "xkcd.png"},
   {title: "Dinosaur Comics", rss_feed_url: "http://www.qwantz.com/rssfeed.php", description: "Dinosaur Comics!", category_id: nil, image_source: "Dinosaur_Comics.jpg"},
-  {title: "Explosm.net", rss_feed_url: "http://feeds.feedburner.com/Explosm", description: "Cyanide and Happiness!", category_id: nil, image_source: "explosm-logo.jpg"},
+  {title: "Explosm.net", rss_feed_url: "http://feeds.feedburner.com/Explosm", description: "Cyanide and Happiness!", category_id: nil, image_source: "explosm-logo.jpeg"},
   {title: "Lifehacker.com", rss_feed_url: "http://feeds.gawker.com/lifehacker/full", description: "Hack your life", category_id: nil, image_source: "Lifehacker_Logo.png"},
   {title: "TechCrunch Startups", rss_feed_url: "http://feeds.feedburner.com/TechCrunch/startups", description: "All the news you need on startups", category_id: nil, image_source: "tc-logo.jpg"},
   {title: "Kotaku", rss_feed_url: "http://feeds.gawker.com/kotaku/full", description: "Your source for video game debauchery", category_id: nil, image_source: "kotakuLogo.png"},
-  {title: "Harvard Business Review", rss_feed_url: "http://hbswk.hbs.edu/rss/rss.xml", description: "The Harvard Business Review", category_id: nil, image_source: "harvardBusinessReviewlogo.png"},
+  {title: "Harvard Business Review", rss_feed_url: "http://hbswk.hbs.edu/rss/rss.xml", description: "The Harvard Business Review", category_id: nil, image_source: "HarvardBusinessReviewlogo.png"},
   {title: "The Business of Fashion", rss_feed_url: "http://www.businessoffashion.com/feed", description: "Fashion News, Analysis and Business Intelligence from the leading digital authority", category_id: nil, image_source: "bof_logo.png"},
   {title: "Seth Godin", rss_feed_url: "http://feeds.feedblitz.com/sethsblog&x=1", description: "Seth Godin's riffs on marketing, respect, and the ways ideas spread.", category_id: nil, image_source: "seth-godin.png"},
   {title: "Calculated Risk", rss_feed_url: "http://feeds.feedburner.com/CalculatedRisk", description: "A top ranked economics and finance blog with a focus on the housing market", category_id: nil, image_source: "calculated-risk.jpeg"},
