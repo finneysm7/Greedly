@@ -8,6 +8,14 @@ Greedly.Models.Business = Backbone.Model.extend({
 		return this._articles;
 	},
 	
+	firstArticle: function () {
+		if (!this._firstArticle){
+			this._firstArticle = new Greedly.Models.Article();
+		}
+		
+		return this._firstArticle;
+	},
+	
 	subscribeState: function () {
 		if (!this._subscribeState){
 			this._subscribeState = 'unsubscribed'
@@ -29,9 +37,13 @@ Greedly.Models.Business = Backbone.Model.extend({
 	},
 	
 	parse: function (response) {
-		if (response.latest_articles) {
-			this.articles().set(response.latest_articles);
-			delete response.latest_articles;
+		debugger;
+		if (response.articles) {
+			this.articles().set(response.articles);
+			delete response.articles;
+		} else if (response.first_article) {
+			this.firstArticle().set(response.first_article);
+			delete response.first_article;
 		}
 		
 		return response;

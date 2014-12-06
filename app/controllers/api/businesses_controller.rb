@@ -16,11 +16,14 @@ class Api::BusinessesController < ApplicationController
   
   def show
     @business = Business.includes(:articles).find(params[:id])
-    render json: Business.find(params[:id]), include: :latest_articles
+    # render json: Business.find(params[:id]), include: :latest_articles
+    render :show
   end
   
   def index
-    render json: Business.all
+    # render json: Business.all, include: :latest_articles
+    @businesses = Business.includes(:articles)
+    render :index
   end
 
   private 
