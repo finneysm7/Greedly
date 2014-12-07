@@ -40,5 +40,6 @@ Greedly.Views.BusinessShow = Backbone.CompositeView.extend({
 		})
 		this.$el.parent().removeClass('show');
 		$('.disabling').removeClass('is_disabled'); 
+		// $('.backdrop').removeClass('back-to-biz')
 	} 
 })

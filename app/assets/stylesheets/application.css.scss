@@ -35,13 +35,14 @@
 	margin-right: 34px;
 	width: 240px;
 	float: left;
-	border-radius: 3px;
+	border-radius: 6px;
 	padding: 10px;
 	margin-bottom: 51px;
-	height: 200px;
+	height: 225px;
 	padding-bottom: 0px;
 	border: 1px solid #D8D8D8;
 	background-color: #FFF;
+	overflow: hidden;
 }
 
 .art-overview{
@@ -73,22 +74,11 @@
 //	transition-delay: initial;
 }
 
-html body .backdrop .disabling {
-	height: 100%;
-}
-
-html body .backdrop {
-	height: 100%;
-}
-
 html body {
 	background-color:lightblue;
 	height: 100%;
 }
 
-html{
-	height: 100%;
-}
 
 .sliderContainer {
 	background-color: white;
@@ -101,16 +91,17 @@ html{
 }
 
 #main{
-	position: relative;
 	background-color: lightblue;
-	overflow: scroll;
-	float: left;
-	width: 900px;
-	height: 700px;
+	overflow: scroll;	
+	width: 75%;
+	
+	position:fixed;
+	top:66px;
+	right:0;
+	bottom:0;
 }
 
-#biz-show.show{
-//	display:block;
+#biz-show.show {
 	visibility: visible;
 	opacity: 1;
 	background-color: white;
@@ -155,8 +146,12 @@ body {
 	background-color: darkgrey;
 }
 
-#backdrop{
-
+.backdrop{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
 }
 
 .username{
@@ -221,12 +216,15 @@ ul {
 #sidebar {
 //	position: fixed;
 	background-color: lightgreen;
-	float:left;
 //	display:block;
 	padding-right: 50px;
-	width: 300px;
+	width: 25%;
+	
+	position:fixed;
+	top:66px;
+	left:0;
+	bottom:0;
 //	left: 0;
-	height: 100%;
 	overflow: scroll;
 }
 

@@ -1,6 +1,6 @@
 json.array! @businesses do |business|
   json.extract! business, :id, :title, :description, :category_id, :rss_feed_url, :created_at, :updated_at, :image_source
-  json.first_article business.articles.first
+  json.first_article business.articles.order('published_at DESC').first
 end
 
 # json.articles @business.articles do |article|

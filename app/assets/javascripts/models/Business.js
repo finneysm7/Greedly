@@ -37,7 +37,6 @@ Greedly.Models.Business = Backbone.Model.extend({
 	},
 	
 	parse: function (response) {
-		debugger;
 		if (response.articles) {
 			this.articles().set(response.articles);
 			delete response.articles;

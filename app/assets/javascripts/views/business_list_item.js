@@ -115,7 +115,8 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 		setTimeout(function () {
 			$('#biz-show').html(busShow.render().$el);
 			$('#biz-show').addClass('show');
-			$('.disabling').addClass('is_disabled')
+			$('.disabling').addClass('is_disabled');
+			// $('.backdrop').addClass('back-to-biz')
 		}, 50);
 	}
 })
