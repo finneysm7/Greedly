@@ -35,25 +35,25 @@ Greedly.Views.BusinessListItem = Backbone.View.extend({
 			this.model.toggleSubscribeState();
 		  }
 		  var that = this;
-		  debugger;
-		  this.model.firstArticle().fetch({
- 			  success: function () {
- 		  		var renderedContent = that.template({
- 		  			business: that.model,
- 		  			disabled: disability,
- 		  			button_val: biz_val,
- 		  			article: that.model.firstArticle()
- 		  		})
- 		  		that.$el.html(renderedContent);
- 		  		return that;
- 			  }
- 		  });
- 		// var renderedContent = that.template({
-//   		  			business: that.model,
-//   		  			disabled: disability,
-//   		  			button_val: biz_val,
-//   		  		})
-//  		 this.$el.html(renderedContent);
+		  // this.model.firstArticle().fetch({
+//  			  success: function () {
+//  		  		var renderedContent = that.template({
+//  		  			business: that.model,
+//  		  			disabled: disability,
+//  		  			button_val: biz_val,
+//  		  			article: that.model.firstArticle()
+//  		  		})
+//  		  		that.$el.html(renderedContent);
+//  		  		return that;
+//  			  }
+//  		  });
+ 		var renderedContent = that.template({
+  		  			business: that.model,
+  		  			disabled: disability,
+  		  			button_val: biz_val,
+					article: that.model.firstArticle()
+  		  		})
+ 		 this.$el.html(renderedContent);
 		  return this;
 	},
 	

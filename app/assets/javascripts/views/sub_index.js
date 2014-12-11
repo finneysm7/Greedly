@@ -22,7 +22,7 @@ Greedly.Views.SubIndex = Backbone.CompositeView.extend({
 	
 	addBusiness: function (sub) {
 		var that = this;
-		var business = Greedly.businesses.getOrFetch(sub.get('business_id'))
+		var business = Greedly.businesses.get(sub.get('business_id'))
 		var view = new Greedly.Views.BusinessListItem({
 			model: business,
 			subcol: that.collection

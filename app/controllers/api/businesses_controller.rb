@@ -23,6 +23,7 @@ class Api::BusinessesController < ApplicationController
   def index
     # render json: Business.all, include: :latest_articles
     @businesses = Business.includes(:articles)
+    # use a SQL query to select the first article from the sql database of articles 
     render :index
   end
 
