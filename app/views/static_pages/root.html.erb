@@ -7,4 +7,7 @@
 	</div>
 </div>
 <div id='biz-show'></div>
-<script>$(Greedly.initialize())</script>
+<script>
+window.bus = JSON.parse('<%=j Business.all.to_json(includes: :first_article).html_safe %>');
+$(Greedly.initialize())
+</script>

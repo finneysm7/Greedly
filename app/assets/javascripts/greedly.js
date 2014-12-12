@@ -31,11 +31,12 @@ window.Greedly = {
   Views: {},
   Routers: {},
   initialize: function () {
-	Greedly.businesses = new Greedly.Collections.Businesses();
+	Greedly.businesses = new Greedly.Collections.Businesses(window.bus);
 	new Greedly.Routers.Router({
 		$rootEl: $('#main'),
 	});
-	Greedly.businesses.fetch();
+	
+	
 	Greedly.articles = new Greedly.Collections.Articles();
 	// Greedly.articles.fetch();
 	Greedly.subscriptions = new Greedly.Collections.Subscriptions();

@@ -3,20 +3,20 @@ Greedly.Views.BusinessIndex = Backbone.CompositeView.extend({
 	
 	initialize: function () {
 		// this.listenTo(this.collection, 'sync', this.render);
-		this.listenTo(this.collection, 'add', this.addBusiness);
+		//this.listenTo(this.collection, 'add', this.addBusiness);
 		// this.listenTo(this.subcol, 'sync', this.render)
+		this.render();
 		var view = this;
 		this.collection.each(function (business){
 			view.addBusiness(business);
 		});
 	},
 	
-	
-	
 	render: function () {
 		var that = this
-		this.attachSubviews();
 		this.$el.html(that.template());
+		this.attachSubviews();
+		
 		// this.$('.to-biz-show').on('click', this.businessShow.bind(this));
 		return this;
 	},

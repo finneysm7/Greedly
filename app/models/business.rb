@@ -12,6 +12,10 @@ class Business < ActiveRecord::Base
     articles.sort { |a, b| b.published_at <=> a.published_at }
   end
   
+  def first_article
+    articles.order('published_at DESC').first
+  end
+  
   def reload
     begin
       #not sure if Feedjira will work, I need something that can handle feedburner
