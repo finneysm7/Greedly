@@ -48,7 +48,7 @@ Greedly.Routers.Router = Backbone.Router.extend({
 // 		});
 // 		this._swapView(artIndex, this.$rootEl);
 		
-		// Greedly.businesses.fetch();
+		Greedly.businesses.fetch();
 		var busIndex = new Greedly.Views.BusinessIndex({
 			collection: Greedly.businesses,
 			subcol: Greedly.subscriptions

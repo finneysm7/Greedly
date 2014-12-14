@@ -1,10 +1,14 @@
 Greedly.Views.BusinessListItem = Backbone.View.extend({
 	tagname: 'li',
+	
 	template: JST['bus_list_show'],
 	
 	initialize: function (options) {
-		this.subcol = options.subcol
-		this.listenTo(this.model, 'sync', this.setUpSubscribeToggle);
+		this.subcol = options.subcol;
+		this.listenTo(this.model, 'change sync', function () {
+			this.render();
+			this.setUpSubscribeToggle();
+		}.bind(this));
 		this.listenTo(this.subcol, 'sync add', this.setUpSubscribeToggle);
 		this.listenTo(this.subcol, 'remove reset', this.render);
 		this.setUpSubscribeToggle();

@@ -1,6 +1,6 @@
 json.array! @businesses do |business|
   json.extract! business, :id, :title, :description, :category_id, :rss_feed_url, :created_at, :updated_at, :image_source
-  json.first_article business.first_article
+  json.first_article business.articles.first
   # only get the first article via a SQL query perhaps
 end
 
