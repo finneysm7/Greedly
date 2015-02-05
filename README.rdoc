@@ -1,3 +1,3 @@
-This is the website that I created for my final project of App Academy. The website can be viewed [here](http://www.greedly.net/session/new).
+This is the website that I created for my final project of App Academy. The website can be viewed here: http://www.greedly.net.
 
 This website was made using Backbone.js as a front end consuming a rails api.
